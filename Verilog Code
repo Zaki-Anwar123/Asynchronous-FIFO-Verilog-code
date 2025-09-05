@@ -3,6 +3,7 @@ input rd_en, wr_en,
 input wclk, rclk,rst,
   input [7:0]wdata,
   output reg [7:0]rdata
+  output empty,full
 
 );
   
@@ -15,7 +16,7 @@ input wclk, rclk,rst,
   reg [4:0]wr_ptr_gr;
   reg [4:0]rd_ptr_gr;
   
-  wire empty,full;
+ 
 
   always@(posedge wclk or posedge rst )begin
     if(rst)begin
