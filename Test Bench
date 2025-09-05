@@ -5,9 +5,10 @@ module tb;
 reg rd_en,wr_en;
 reg wclk, rclk,rst;
   wire [7:0]rdata;
+  wire empty,full;
   reg [7:0]wdata;
   
-  fifo dut(.rd_en(rd_en),.wr_en(wr_en),.wclk(wclk),.rclk(rclk),.rst(rst),.wdata(wdata),.rdata(rdata));
+  fifo dut(.rd_en(rd_en),.wr_en(wr_en),.wclk(wclk),.rclk(rclk),.rst(rst),.wdata(wdata),.rdata(rdata),.empty(empty),.full(full));
   
   
   initial begin
